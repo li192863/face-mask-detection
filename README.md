@@ -4,7 +4,7 @@
 
 项目目录结构：
 
-![image-20220603222735233](pictures\目录结构.png)
+![image-20220603222735233](pictures/目录结构.png)
 
 如上图所示，项目根目录为`E:/Projects/FaceMaskDetection`。项目分为两个子工程，第一个工程为dataset，第二个子工程为yolov5。子工程dataset负责处理数据集，子工程yolov5负责训练模型并输出检测结果。
 
@@ -16,11 +16,11 @@
 
 论文中只提到了用的是公开可用的数据集，但并未给出数据集的准确地址。此处我使用了Kaggle中的口罩检测数据集，详细地址为https://www.kaggle.com/datasets/andrewmvd/face-mask-detection。该数据集每个边界框信息有三类，分别为'with_mask'（0）, 'without_mask'（1）, 'mask_weared_incorrect'（2）。
 
-<img src="pictures\下载数据集.png" alt="image-20220603222458789" style="zoom:50%;" />
+<img src="pictures/下载数据集.png" alt="image-20220603222458789" style="zoom:50%;" />
 
 在网页中下载数据集至本地，解压至`dataset`文件夹下（此时`dataset`文件夹下只有`images`文件夹和`annotations`文件夹）。`images`文件夹下存放853张图片（`maksssksksss*.png`），`annotations`文件夹下存放853张图片的标注信息（`maksssksksss*.xml`）。每张图片与标注文件除后缀名外名称相同。
 
-![image-20220603230956589](pictures\dataset子项目.png)
+![image-20220603230956589](pictures/dataset子项目.png)
 
 ### 划分数据集
 
@@ -117,11 +117,11 @@ if __name__ == '__main__':
 
 `image_sets`文件夹下存放`test.txt`、`train.txt`、`val.txt`，分别对应测试集、训练集、验证集，每个`.txt`文件每一行都为一个文件名。
 
-![image-20220603224821152](pictures\image_sets文件示例.png)
+![image-20220603224821152](pictures/image_sets文件示例.png)
 
 `dataset_path`文件夹下存放`test.txt`、`train.txt`、`val.txt`，分别对应测试集、训练集、验证集，每个`.txt`文件每一行都为一个图片的绝对路径。
 
-![image-20220603224954691](pictures\dataset_path文件示例.png)
+![image-20220603224954691](pictures/dataset_path文件示例.png)
 
 ### 标记数据集
 
@@ -295,13 +295,13 @@ if __name__ == '__main__':
 
 程序运行结束后，子工程中出现了`labels`文件夹。控制台输出训练数据集的长度，输出训练数据集中的第三张图片的标签，并显示第三张图片与其标注。
 
-![image-20220603225920882](pictures\标记数据集输出结果1.png)
+![image-20220603225920882](pictures/标记数据集输出结果1.png)
 
-![image-20220603225844033](pictures\标记数据集输出结果2.png)
+![image-20220603225844033](pictures/标记数据集输出结果2.png)
 
 `labels`文件夹下存放853张图片的标注信息（`maksssksksss*.txt`）。一个`.txt`文件对应一张`.png`图片，文件每一行对应一个物体，文件每一行代表的含义为边界框类别（0/1/2）、中心点x坐标（相对于整个图片宽）、中心点y坐标（相对于整个图片高）、边界框宽（相对于整个图片宽）、边界框高（相对于整个图片高）。该格式由yolov5官方指定。
 
-![image-20220603230158030](pictures\labels文件示例.png)
+![image-20220603230158030](pictures/labels文件示例.png)
 
 至此，`dataset`子工程完成，该工程成功划分了数据集，并将标注信息转化为yolo格式。
 
@@ -321,7 +321,7 @@ pip install -r requirements.txt -i https://mirrors.tuna.tsinghua.edu.cn/help/pyp
 
 `yolov5`文件夹目录如下：
 
-![image-20220603232341599](pictures\yolov5子项目.png)
+![image-20220603232341599](pictures/yolov5子项目.png)
 
 ### 准备数据
 
@@ -342,7 +342,7 @@ names: ['with_mask', 'without_mask', 'mask_weared_incorrect']  # class names
 
 这里`train.txt`、`val.txt`、`test.txt`中分别指明了训练集、验证集、测试集的所有图片的绝对路径。YOLOv5官方规定文件查找`images`文件夹下每一张图片时，其自动查找与`images`文件夹平级的`labels`文件夹相同文件名的`.txt`文件作为图片的对应标签。官方解释如下：
 
-![image-20220603233849752](pictures\官方文档说明.png)
+![image-20220603233849752](pictures/官方文档说明.png)
 
 ### 修改模型
 
@@ -461,11 +461,11 @@ def parse_opt(known=False):
 
 PR曲线：
 
-![PR_curve](pictures\PR_curve.png)
+![PR_curve](pictures/PR_curve.png)
 
 损失变化：
 
-![image-20220604000849011](pictures\result.png)
+![image-20220604000849011](pictures/result.png)
 
 ## 预测图片
 
@@ -532,9 +532,9 @@ python detect.py --source 0  # webcam
 
 以下为一些检测结果展示。
 
-![image-20220604002908692](pictures\pic1.png)
+![image-20220604002908692](pictures/pic1.png)
 
-![image-20220604003514098](pictures\pic2.png)
+![image-20220604003514098](pictures/pic2.png)
 
-![image-20220604003131098](pictures\pic3.png)
+![image-20220604003131098](pictures/pic3.png)
 
