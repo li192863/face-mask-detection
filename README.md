@@ -516,7 +516,7 @@ def parse_opt():
 
 运行上述代码，执行检测。检测完成后，模型检测信息会保存在`runs/detect/exp`文件夹下。
 
-`detect.py`可以选择摄像头、图片、视频等作为输入进行检测.
+`detect.py`可以选择摄像头、图片、视频等作为输入进行检测。
 
 ```shell
 python detect.py --source 0  # webcam
