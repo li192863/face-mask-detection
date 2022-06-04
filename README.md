@@ -8,7 +8,7 @@
 
 如上图所示，项目根目录为`E:/Projects/FaceMaskDetection`。项目分为两个子工程，第一个工程为dataset，第二个子工程为yolov5。子工程dataset负责处理数据集，子工程yolov5负责训练模型并输出检测结果。
 
-项目我已开源至我的Github个人主页：https://github.com/li192863/face-mask-detection。
+以下为项目构建过程。
 
 ## 数据处理
 
@@ -19,6 +19,8 @@
 <img src="pictures/下载数据集.png" alt="image-20220603222458789" style="zoom:50%;" />
 
 在网页中下载数据集至本地，解压至`dataset`文件夹下（此时`dataset`文件夹下只有`images`文件夹和`annotations`文件夹）。`images`文件夹下存放853张图片（`maksssksksss*.png`），`annotations`文件夹下存放853张图片的标注信息（`maksssksksss*.xml`）。每张图片与标注文件除后缀名外名称相同。
+
+`dataset`文件夹目录如下：
 
 ![image-20220603230956589](pictures/dataset子项目.png)
 
