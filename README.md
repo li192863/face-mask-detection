@@ -14,7 +14,7 @@
 
 ### 准备数据集
 
-论文中只提到了用的是公开可用的数据集，但并未给出数据集的准确地址。此处我使用了Kaggle中的口罩检测数据集，详细地址为https://www.kaggle.com/datasets/andrewmvd/face-mask-detection。该数据集每个边界框信息有三类，分别为'with_mask'（0）, 'without_mask'（1）, 'mask_weared_incorrect'（2）。
+论文中只提到了用的是公开可用的数据集，但并未给出数据集的准确地址。此处我使用了Kaggle中的口罩检测数据集，详细地址为https://www.kaggle.com/datasets/andrewmvd/face-mask-detection 。该数据集每个边界框信息有三类，分别为'with_mask'（0）, 'without_mask'（1）, 'mask_weared_incorrect'（2）。
 
 <img src="pictures/下载数据集.png" alt="image-20220603222458789" style="zoom:50%;" />
 
